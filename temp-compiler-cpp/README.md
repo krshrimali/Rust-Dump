@@ -14,7 +14,11 @@ func, TOKEN_ID
 {, TOKEN_LBRACE
 return, TOKEN_ID
 3, TOKEN_INT
-Unexpected character found: +
++, TOKEN_ADD
+4, TOKEN_INT
+;, TOKEN_SEMI
+}, TOKEN_RBRACE
+Unexpected character found:
 EOF, TOKEN_EOF
 ```
 
