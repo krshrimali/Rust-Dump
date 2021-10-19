@@ -1,4 +1,6 @@
-#include "include/krslex.h"
+#include "krslex.h"
+#include "lexer.h"
+#include "token.h"
 
 #include <string>
 #include <iostream>
@@ -6,10 +8,15 @@
 #include <sstream>
 
 void krslex_compile(std::string data) {
-    std::cout << data << std::endl;
-    while(lexer_read(data)) {
-        continue;
-    }
+    LEXER_T* lexer = lexer_init(data);
+    TOKEN_T* tok = lexer_next(lexer);
+
+    while(tok->type != TOKEN_T::TYPE::TOKEN_EOF) {
+        // std::cout << tok->type;
+        std::cout << "Hi\n";
+    } 
+
+    // std::cout << TOKEN_T::TYPE::TOKEN_EOF;
 }
 
 void krslex_compile_filename(std::string filename) {
