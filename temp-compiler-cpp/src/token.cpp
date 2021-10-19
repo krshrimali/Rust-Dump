@@ -25,6 +25,7 @@ std::string token_type_to_string(TOKEN_T::TYPE type) {
         case TOKEN_T::TYPE::TOKEN_INT: return "TOKEN_INT";
         case TOKEN_T::TYPE::TOKEN_SEMI: return "TOKEN_SEMI";
         case TOKEN_T::TYPE::TOKEN_EOF: return "TOKEN_EOF";
+        case TOKEN_T::TYPE::TOKEN_ADD: return "TOKEN_ADD";
         default:
             std::cout << "Unexpected token given: " << static_cast<int>(type)  << '\n';
             break;

@@ -20,6 +20,7 @@ struct TOKEN_T {
         TOKEN_INT=11,
         TOKEN_SEMI=12,
         TOKEN_EOF=13,
+        TOKEN_ADD=14
     };
 
     TYPE type;

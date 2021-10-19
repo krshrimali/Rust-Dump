@@ -99,6 +99,7 @@ TOKEN_T* lexer_next(LEXER_T* lexer) {
             case '<': return lexer_current(lexer, static_cast<int>(TOKEN_T::TYPE::TOKEN_LT));
             case '>': return lexer_current(lexer, static_cast<int>(TOKEN_T::TYPE::TOKEN_GT));
             case ';': return lexer_current(lexer, static_cast<int>(TOKEN_T::TYPE::TOKEN_SEMI));
+            case '+': return lexer_current(lexer, static_cast<int>(TOKEN_T::TYPE::TOKEN_ADD));
             default:
                 std::cout << "Unexpected character found: " << std::string(1, lexer->current_char) << "\n";
                 break;
