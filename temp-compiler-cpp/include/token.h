@@ -26,4 +26,7 @@ struct TOKEN_T {
 };
 
 TOKEN_T* init_token(const std::string value, int type);
+
+std::string token_type_to_string(TOKEN_T::TYPE type);
+
 #endif

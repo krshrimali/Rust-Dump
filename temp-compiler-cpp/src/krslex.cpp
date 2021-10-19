@@ -12,11 +12,11 @@ void krslex_compile(std::string data) {
     TOKEN_T* tok = lexer_next(lexer);
 
     while(tok->type != TOKEN_T::TYPE::TOKEN_EOF) {
-        // std::cout << tok->type;
-        std::cout << "Hi\n";
-    } 
+        std::cout << tok->value << ", " << token_type_to_string(tok->type) << '\n';
+        tok = lexer_next(lexer);
+    }
 
-    // std::cout << TOKEN_T::TYPE::TOKEN_EOF;
+    std::cout << "EOF, " << token_type_to_string(tok->type) << '\n';
 }
 
 void krslex_compile_filename(std::string filename) {
