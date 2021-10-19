@@ -1,3 +1,23 @@
+**Execution**:
+
+```bash
+$ make
+$ ./a.out main.krs
+
+func, TOKEN_ID
+(, TOKEN_LPAREN
+3, TOKEN_INT
+,, TOKEN_COMMA
+4, TOKEN_INT
+), TOKEN_RPAREN
+=>, TOKEN_RIGHT_ARROW
+{, TOKEN_LBRACE
+return, TOKEN_ID
+3, TOKEN_INT
+Unexpected character found: +
+EOF, TOKEN_EOF
+```
+
 **Note:**
 
 - I'm currently attempting to write a compiler (will add references soon) in C++ and while I'm learning Rust - I'll attempt to port this to Rust.
