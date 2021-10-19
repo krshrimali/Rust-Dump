@@ -21,7 +21,7 @@ TOKEN_T* lexer_current(LEXER_T* lexer, int id) {
 }
 
 char lexer_peek(LEXER_T* lexer, int offset) {
-    int index = lexer->i;
+    size_t index = lexer->i;
     if (index < lexer->src_size) {
         lexer_advance_by(lexer, offset);
         return lexer->src[index + offset];
@@ -75,6 +75,7 @@ TOKEN_T* lexer_advance_parse_number(LEXER_T* lexer, int type) {
 TOKEN_T* lexer_next(LEXER_T* lexer) {
     while (lexer->current_char != '\0') {
         lexer_skip_whitespaces(lexer);
+        if (lexer->i == lexer->src_size) break;
 
         if (isalpha(lexer->current_char)) {
             return lexer_advance_parse_id(lexer, static_cast<int>(TOKEN_T::TYPE::TOKEN_ID));
@@ -84,7 +85,6 @@ TOKEN_T* lexer_next(LEXER_T* lexer) {
             return lexer_advance_parse_number(lexer, static_cast<int>(TOKEN_T::TYPE::TOKEN_INT));
         }
 
-        /* std::cout << "current char: " << std::string(1, lexer->current_char) << ", " << lexer->i << std::endl; */
         switch(lexer->current_char) {
             case '(': return lexer_current(lexer, static_cast<int>(TOKEN_T::TYPE::TOKEN_LPAREN));
             case ')': return lexer_current(lexer, static_cast<int>(TOKEN_T::TYPE::TOKEN_RPAREN));

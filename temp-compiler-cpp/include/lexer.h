@@ -7,7 +7,7 @@
 struct LEXER_T {
     std::string src;
     char current_char;
-    int i;
+    size_t i;
     size_t src_size;
 };
 

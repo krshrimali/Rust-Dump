@@ -18,7 +18,6 @@ return, TOKEN_ID
 4, TOKEN_INT
 ;, TOKEN_SEMI
 }, TOKEN_RBRACE
-Unexpected character found:
 EOF, TOKEN_EOF
 ```
 
